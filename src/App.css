@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Rouge+Script');
+
 html {
   text-align: center;
+  color: white;
+  background-color: black;
+}
+
+h1 {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+p {
+  font-family: 'Rouge Script', cursive;
+  font-size: 30px;
 }

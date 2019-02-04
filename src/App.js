@@ -14,12 +14,12 @@ class App extends Component {
   componentDidMount = () => {
     axios
       .get(
-        'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1'
+        'https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en'
       )
       .then(response => {
-        console.log(response.data)
+        console.log(response.data.quoteText)
         this.setState({
-          quote: response.data.content
+          quote: response.data.quoteText
         })
       })
   }
@@ -28,6 +28,10 @@ class App extends Component {
     return (
       <div>
         <h1>Quote of the Day</h1>
+        {/* <p>
+          "If you are not willing to risk the unusual, you will have to settle
+          for the ordinary."
+        </p> */}
         <p>{this.state.quote}</p>
       </div>
     )
