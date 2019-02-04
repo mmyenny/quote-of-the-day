@@ -12,15 +12,28 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+    this.fetchQuote()
+  }
+
+  fetchQuote = () => {
     axios
       .get(
         'https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en'
       )
       .then(response => {
         console.log(response.data.quoteText)
-        this.setState({
-          quote: response.data.quoteText
-        })
+        this.setState(
+          {
+            quote: response.data.quoteText
+          },
+          () => {
+            if (!this.state.quote) {
+              this.fetchQuote()
+            } else {
+              return
+            }
+          }
+        )
       })
   }
 
