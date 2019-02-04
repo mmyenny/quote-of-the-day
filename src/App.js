@@ -1,15 +1,27 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import axios from 'axios'
 
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      quote:
-        'When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one that has been opened for us.'
+      quote: ''
     }
+  }
+
+  componentDidMount = () => {
+    axios
+      .get(
+        'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1'
+      )
+      .then(response => {
+        console.log(response.data)
+        this.setState({
+          quote: response.data.content
+        })
+      })
   }
 
   render() {
