@@ -26,13 +26,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Quote of the Day</h1>
-        {/* <p>
-          "If you are not willing to risk the unusual, you will have to settle
-          for the ordinary."
-        </p> */}
-        <p>{this.state.quote}</p>
+      <div className="main">
+        <div className="main2">
+          <h1>Quote of the Day</h1>
+          <div className="line" />
+          <p>{this.state.quote}</p>
+        </div>
       </div>
     )
   }
