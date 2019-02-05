@@ -6,6 +6,13 @@ html {
   background-color: black;
 }
 
+div.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 div.main {
   border: 1px solid;
   box-shadow: 0 0 5px;

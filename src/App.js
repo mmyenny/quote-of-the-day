@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import './App.css'
 import axios from 'axios'
 
+import loading from './images/loading3.gif'
+
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      quote: ''
+      quote: null
     }
   }
 
@@ -42,6 +44,14 @@ class App extends Component {
   }
 
   render() {
+    if (!this.state.quote) {
+      return (
+        <div className="loading">
+          <img className="loading" alt="" src={loading} />{' '}
+        </div>
+      )
+    }
+
     return (
       <div className="main">
         <div className="main2">
