@@ -18,7 +18,11 @@ class App extends Component {
   fetchQuote = () => {
     axios
       .get(
-        'https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en'
+        'https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en',
+        {
+          Origin:
+            'http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en'
+        }
       )
       .then(response => {
         console.log(response.data.quoteText)

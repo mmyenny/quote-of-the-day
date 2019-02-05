@@ -9,7 +9,7 @@ html {
 div.main {
   border: 1px solid;
   box-shadow: 0 0 5px;
-  margin: 50px;
+  margin: 50px 5px;
   animation-name: changeBorder;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -33,6 +33,7 @@ div.line {
 }
 
 h1 {
+  text-align: center;
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
 }
@@ -42,6 +43,24 @@ p {
   font-family: 'Rochester', cursive;
   font-size: 30px;
   padding: 0 15px;
+}
+
+@media (min-width: 450px) {
+  div.main {
+    margin: 50px;
+  }
+}
+
+@media (min-width: 600px) {
+  div.main {
+    margin: 75px 100px;
+  }
+}
+
+@media (min-width: 1000px) {
+  div.main {
+    margin: 125px 275px;
+  }
 }
 
 @keyframes changeBorder {
